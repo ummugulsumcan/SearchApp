@@ -1,0 +1,58 @@
+
+<div class="container pt-70 mb-5">
+  <div class="row">
+    <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="input-group">
+        <input class="form-control border-end-0 border rounded-pill" placeholder="Search"
+               [(ngModel)]="searchValue" type="text" value="search" id="example-search-input" (input)="searchInput()" >
+        <span class="input-group-append">
+                <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3"
+                        type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+      </div>
+    </div>
+    <div class="col-md-9">
+
+      <div class="row">
+        <ng-container *ngFor="let p of newData">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="card mb-3">
+              <img [src]="p.icon">
+              <div class="card-body">
+                <h4 class="card-title" >
+                  <span> {{p.name}}</span>
+                </h4>
+                <div class="row mb-2">
+                  <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 text-muted">Bundle:</div>
+                  <div class="col-lg-6 col-md-8 col-sm-6 col-xs-12">
+                    <small class="text-muted">
+                      {{p.bundle}}
+                    </small>
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 text-muted">Studio:</div>
+                  <div class="col-lg-6 col-md-8 col-sm-6 col-xs-12">
+                    <small class="text-muted">
+                      {{p.studio}}
+                    </small></div>
+
+                </div>
+             
+              </div>
+            </div>
+          </div>
+
+        </ng-container>
+      </div>
+
+    </div>
+    <div class="col-md-9">
+      <span *ngIf="!searchDeger">
+        bulunamadı
+      </span>
+    </div>
+  </div>
+</div>
